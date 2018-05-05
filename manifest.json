@@ -47,6 +47,10 @@
     "src": "printer-icon-152-202093.png",
     "type": "image/png",
     "sizes": "152x152"
+  },{
+    "src": "printer-icon-192-202093.png",
+    "type": "image/png",
+    "sizes": "192x192"
   }],
   "start_url": "https://vibeordie.github.io/print/index.html"
 }

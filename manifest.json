@@ -48,5 +48,5 @@
     "type": "image/png",
     "sizes": "152x152"
   }],
-  "start_url": "/index.html?launcher=true"
+  "start_url": "https://vibeordie.github.io/print/index.html"
 }

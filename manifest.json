@@ -1,0 +1,22 @@
+{
+  "short_name": "IMPRESORA",
+  "name": "Conectar Impresora",
+  "icons": [
+    {
+      "src": "printer-icon-16-202093.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "printer-icon-32-202093.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "printer-icon-152-202093.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "index.html?launcher=true"
+}

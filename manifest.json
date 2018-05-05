@@ -1,22 +1,52 @@
 {
   "short_name": "IMPRESORA",
   "name": "Conectar Impresora",
-  "icons": [
-    {
-      "src": "printer-icon-16-202093.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "printer-icon-32-202093.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "printer-icon-152-202093.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
+  "background_color": "#2196F3",
+  "display": "standalone",
+  "icons": [{
+    "src": "printer-icon-16-202093.png",
+    "type": "image/png",
+    "sizes": "16x16"
+  }, {
+    "src": "printer-icon-24-202093.png",
+    "type": "image/png",
+    "sizes": "24x24"
+  },{
+    "src": "printer-icon-32-202093.png",
+    "type": "image/png",
+    "sizes": "32x32"
+  },{
+    "src": "printer-icon-48-202093.png",
+    "type": "image/png",
+    "sizes": "48x48"
+  },{
+    "src": "printer-icon-57-202093.png",
+    "type": "image/png",
+    "sizes": "57x57"
+  },{
+    "src": "printer-icon-64-202093.png",
+    "type": "image/png",
+    "sizes": "64x64"
+  },{
+    "src": "printer-icon-72-202093.png",
+    "type": "image/png",
+    "sizes": "72x72"
+  },{
+    "src": "printer-icon-114-202093.png",
+    "type": "image/png",
+    "sizes": "114x114"
+  },{
+    "src": "printer-icon-120-202093.png",
+    "type": "image/png",
+    "sizes": "120x120"
+  },{
+    "src": "printer-icon-144-202093.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  },{
+    "src": "printer-icon-152-202093.png",
+    "type": "image/png",
+    "sizes": "152x152"
+  }],
   "start_url": "index.html?launcher=true"
 }

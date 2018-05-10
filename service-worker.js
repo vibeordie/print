@@ -8,7 +8,7 @@ var URLS = [                            // Add URL you want to cache in this lis
 
 // Respond with cached resources
 self.addEventListener('fetch', function (e) {
-  if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') return;
+  //if (e.request.cache === 'only-if-cached' && e.request.mode !== 'same-origin') return;
   console.log('fetch request : ' + e.request.url)
   e.respondWith(
     caches.match(e.request).then(function (request) {

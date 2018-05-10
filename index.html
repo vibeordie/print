@@ -142,7 +142,7 @@ limitations under the License.
 
   <body unresolved>
     <div id="cardsheaderbr">
-      <paper-card heading="Conectar Impresora v704">
+      <paper-card heading="Conectar Impresora v705">
         <div class="card-content">
           <paper-progress id="progress" indeterminate></paper-progress>
         </div>
@@ -363,9 +363,9 @@ function exponentialBackoff(max, delay, toTry, success, fail) {
     if (max === 0) {
       return fail();
     }
-    time('Tentando de novo em ' + delay + 'ms... mais (' + max + ' intentos)');
+    time('Tentando de novo em ' + delay + 'ms... mais (' + max + ' tentativas)');
     setTimeout(function() {
-      exponentialBackoff(--max, delay * 1, toTry, success, fail);
+      exponentialBackoff(--max, delay * 0.5, toTry, success, fail);
     }, delay);
   });
 }

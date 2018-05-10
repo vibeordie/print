@@ -318,7 +318,7 @@ function onButtonClick() {
 }
 
 function connect() {
-  exponentialBackoff(10 /* max retries */, 10 /* seconds delay */,
+  exponentialBackoff(20 /* max retries */, 10 /* seconds delay */,
     function toTry() {
       time('Tentando conexão com a impresora... ');
       return bluetoothDevice.gatt.connect();

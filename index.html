@@ -142,7 +142,7 @@ limitations under the License.
 
   <body unresolved>
     <div id="cardsheaderbr">
-      <paper-card heading="Conectar Impresora v707">
+      <paper-card heading="Conectar Impresora v708">
         <div class="card-content">
           <paper-progress id="progress" indeterminate></paper-progress>
         </div>
@@ -318,7 +318,7 @@ function onButtonClick() {
 }
 
 function connect() {
-  exponentialBackoff(60 /* max retries */, 7 /* miliseconds delay */,
+  exponentialBackoff(60 /* max retries */, 60 /* miliseconds delay */,
     function toTry() {
       time('Tentando conexão com a impresora... ');
       return bluetoothDevice.gatt.connect();
@@ -365,7 +365,7 @@ function exponentialBackoff(max, delay, toTry, success, fail) {
     }
     time('Tentando de novo em ' + delay + 'ms... mais (' + max + ' tentativas)');
     setTimeout(function() {
-      exponentialBackoff(--max, delay * 0.5, toTry, success, fail);
+      exponentialBackoff(--max, delay * 1, toTry, success, fail);
     }, delay);
   });
 }

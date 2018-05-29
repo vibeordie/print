@@ -359,7 +359,6 @@ function exponentialBackoff(max, delay, toTry, success, fail) {
     if (max === 0) {
       return fail();
     }
-    time('Tentando de novo em ' + delay + 'ms... mais (' + max + ' tentativas)');
     setTimeout(function() {
       exponentialBackoff(--max, delay * 1, toTry, success, fail);
     }, delay);

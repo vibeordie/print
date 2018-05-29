@@ -142,7 +142,7 @@ limitations under the License.
 
   <body unresolved>
     <div id="cardsheaderbr">
-      <paper-card heading="Conectar Impresora v708">
+      <paper-card heading="Conectar Impresora v709">
         <div class="card-content">
           <paper-progress id="progress" indeterminate></paper-progress>
         </div>
@@ -158,7 +158,7 @@ limitations under the License.
       </paper-card>
 	  <paper-card>
 	    <div class="card-content">
-		  <center><h3>Detalhes de conexão</h3></center
+		  <center><h3>Detalhes de conexão</h3></center>
           <div id="output" class="output">
           <div id="content"></div>
           <div id="status"></div>
@@ -167,8 +167,8 @@ limitations under the License.
 	    </div>
       </paper-card>
       <paper-dialog id="dialog">
-        <h2>Falhou</h2>
-        <p>Pimeiro deve clicar em CONECTAR até que a lúz esteja acesa</p>
+        <h2>Erro</h2>
+        <p>A impresora não está conectada</p>
       </paper-dialog>
     </div>	
 
@@ -252,7 +252,7 @@ if ('serviceWorker' in navigator) {
 		  if (bluetoothDevice.gatt.connected) {
 			bluetoothDevice.gatt.disconnect();
 		  } else {
-			log('> A impresora já está desconectada');
+			return;
 		  }
         });
       });
@@ -300,7 +300,6 @@ if ('serviceWorker' in navigator) {
 
 function onButtonClick() {
   bluetoothDevice = null;
-  log('Procurando a impresora Feasycom...');
               navigator.bluetooth.requestDevice({
               filters: [{
                 name: 'Feasycom'
@@ -318,16 +317,15 @@ function onButtonClick() {
 }
 
 function connect() {
-  exponentialBackoff(60 /* max retries */, 60 /* miliseconds delay */,
+  exponentialBackoff(29 /* max retries */, 100 /* miliseconds delay */,
     function toTry() {
-      time('Tentando conexão com a impresora... ');
       return bluetoothDevice.gatt.connect();
     },
     function success() {
       if (bluetoothDevice.gatt.connected) {
         log('> Impresora conectada. Pode printar agora.');
       } else {
-        log('> A impresora está desconectada');
+        return;
       }
     },
     function fail() {
@@ -339,16 +337,14 @@ function onDisconnectButtonClick() {
   if (!bluetoothDevice) {
     return;
   }
-  log('Desconectando a impresora...');
   if (bluetoothDevice.gatt.connected) {
     bluetoothDevice.gatt.disconnect();
   } else {
-    log('> A impresora já está desconectada');
+    return;
   }
 }
 
 function onDisconnected() {
-  log('> Impresora desconectada');
   connect();
 }
 
